@@ -9,6 +9,7 @@
 		"assert": "^2.0.0",
 		"axios": "^0.26.1",
 		"create-react-class": "15.6.3",
+		"fabric": "^5.2.4",
 		"hanspell": "^0.9.4",
 		"http-proxy-middleware": "^2.0.6",
 		"https-browserify": "^1.0.0",
