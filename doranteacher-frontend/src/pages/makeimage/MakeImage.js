@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fabric } from 'fabric';
+import ReloadJson from './ReloadJson';
 
 function MakeImage() {
 	const [canvas, setCanvas] = useState('');
@@ -10,8 +11,8 @@ function MakeImage() {
 	}, []);
 	const initCanvas = () =>
 		new fabric.Canvas('canvas', {
-			height: 800,
-			width: 800,
+			height: 600,
+			width: 600,
 			backgroundColor: 'pink',
 		});
 
@@ -34,7 +35,20 @@ function MakeImage() {
 					<button type="submit">Add Image</button>
 				</div>
 			</form>
+			<button
+				onClick={(e) => {
+					e.preventDefault();
+					let jsonData = canvas.toJSON();
+					console.log(JSON.stringify(jsonData));
+				}}
+			>
+				To JSON
+			</button>
+			<button onClick={(e) => canvas.clear(e)}>Clear Canvas</button>
 			<canvas id="canvas" />
+
+			<br />
+			<ReloadJson />
 		</div>
 	);
 }
